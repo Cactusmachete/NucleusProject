@@ -4,11 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
 @Table(name="Settlement")
 public class Settlement {
-
     @Id
     @Column(name = "Payment_id")
     private Integer PaymentID;
@@ -79,3 +77,4 @@ public class Settlement {
         ReceiptNo = receiptNo;
     }
 }
+
