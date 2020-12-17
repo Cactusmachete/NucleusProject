@@ -24,7 +24,7 @@
                     </a>
                     <div class="dropdown-menu sm-menu">
                         <a class="dropdown-item" href="<%= request.getContextPath()%>/showRepaymentPolicy">Repayment Policy</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/eligibilityPolicy/">Eligibility Policy</a>
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
@@ -34,8 +34,8 @@
                         Parameters
                     </a>
                     <div class="dropdown-menu sm-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="main/getmaker">Maker</a>
+                        <a class="dropdown-item" href="main/getchecker">Checker</a>
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
@@ -54,14 +54,14 @@
                         Accounting
                     </a>
                     <div class="dropdown-menu sm-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="<%= request.getContextPath()%>/newPayment">New Payment</a>
                         <a class="dropdown-item" href="#">Link 2</a>
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>
 
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="#">Customer Service</a>
+                    <a class="nav-link" href="<%= request.getContextPath()%>/customerLoanSearch">Customer Service</a>
                 </li>
 
                 <li class="nav-item dropdown dmenu mx-2">
@@ -80,7 +80,7 @@
                     </a>
                     <div class="dropdown-menu sm-menu">
                         <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="main/loanClosureBod">Link 2</a>
                         <a class="dropdown-item" href="#">Link 3</a>
                     </div>
                 </li>

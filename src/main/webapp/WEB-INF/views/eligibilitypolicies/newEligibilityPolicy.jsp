@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-   <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
    <%@ include file = "/navbar.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -36,7 +35,7 @@
 
     <!-- Placeholders  -->
     	<div class="container-fluid">
-    		<form:form method = "post" action="added" modelAttribute = "eligibilityPolicy">
+    		<form:form method = "post" action="add" modelAttribute = "eligibilityPolicy">
     			<!-- Section 1 -->
     		    <div class="form-group row pt-2 pl-3">
     			      <div class="col-md-3">
@@ -81,27 +80,31 @@
     				      </tr>
     				    </thead>
     				    <tbody>
+    				    <c:forEach items="${eligibilityPolicy.eligibilityParameterList}" var="eligibilityParameter">
     				      <tr class="d-flex">
     				        <td class="col-7" style="text-align:center;">
-    				            <form:select path="" id="parameter1" name="parameter1" class="custom-select">
-    				            <c:forEach items="${allEligibilityParameterList}" var="eligibilityParameter">
-                                    <form:option value="${eligibilityParameter.parameterName}"/>
+    				            <form:select path="eligibilityParameter" class="custom-select">
+    				            <c:forEach items="${allEligibilityParameterList}" var="eligibilityParameterMaster">
+                                    <form:option value="${eligibilityParameterMaster.parameterName}"/>
                                 </c:forEach>
-                                </form:select></td>
+                                </form:select>
+                            </td>
     				        <td class="col-5" style="text-align:center;">
     				            <textarea class="form-control" disabled>${allEligibilityParameterList[0].parameterDescription}</textarea> </td>
     				      </tr>
-
+    				    </c:forEach>
     				    </tbody>
     				  </table>
+
     			</div>
+
                 <hr width="" color="#b3b3b3">
     			<div class="row pt-3 px-3 d-flex justify-content-end">
                 	<div class="px-2">
-          				<button type="submit" class="btn btn-primary">Save</button>
+          				<input type="submit" class="btn btn-primary" name ="action" value="Save">
        				</div>
                 	<div>
-           				<button type="submit" class="btn btn-primary">Save & Request Approval</button>
+           				<input type="submit" class="btn btn-primary" name ="action" value="Save & Request Approval"/>
        				</div>
                 </div>
 
